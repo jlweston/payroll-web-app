@@ -1,0 +1,24 @@
+<!-- partials/listemployees.html -->
+<div class="row">
+	<h3>Employee list</h3>
+	<table class="table">
+		<thead class="thead-inverse">  
+		<tr>
+			<th>Employee name</th>
+			<th>Tax code</th>
+			<th>Last payment date</th>
+			<th>Pay</th>
+		</tr>
+		<tr ng-repeat="employee in employees">
+			<td><a ui-sref="employeedetails({id: employee.id})">{{employee.forename}} {{employee.surname}}</a></td>
+			<td>{{employee.taxcode}}</td>
+			<td><a ui-sref="employeehistory({id: employee.id})">*todo*</a></td>
+			<td>
+				<button class="btn btn-success btn-sm" ui-sref="payemployee({id: employee.id})">Pay employee</button>
+			</td>
+		</tr>
+		<tr>
+			<td><button class="btn btn-success btn-sm">New employee</button></td>
+		</tr>
+	</table>
+</div>

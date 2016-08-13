@@ -1,0 +1,22 @@
+<!-- partials/employeehistory.html -->
+<div ng-controller="employeeCtrl" class="row">
+	<h3>Payment history for: {{ employees[currentEmployee-1].forename }} {{ employees[currentEmployee-1].surname }}</h3>
+
+	<table class="table">
+		<thead class="thead-inverse">  
+		<tr>
+			<th>Pay period</th>
+			<th>Payment type</th>
+			<th>Payment amount</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr ng-repeat="payment in paymenthistory | filter : {'employeeid' : currentEmployee } | orderBy : payperiod">
+			<td>{{payment.payperiod}}</td>
+			<td>{{payment.paymentname}}</td>
+			<td>{{payment.paymentrate | currency : "£" }}</td>
+		</tr>
+		</tbody>
+	</table>
+	
+</div>

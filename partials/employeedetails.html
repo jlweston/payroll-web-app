@@ -1,0 +1,42 @@
+<!-- partials/listemployees.html -->
+<div ng-controller="employeeCtrl" class="row">
+	<h3>Employee record for: {{ employees[currentEmployee-1].forename }} {{ employees[currentEmployee-1].surname }}</h3>
+
+	<table class="table">
+		<thead class="thead-inverse">
+			<tr>
+				<th>Field</th>
+				<th>Value</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>Forename</th>
+				<td>{{ employees[currentEmployee-1].forename }}</td>
+			</tr>
+			<tr>
+				<th>Surname</th>
+				<td>{{ employees[currentEmployee-1].surname }}</td>
+			</tr>
+			<tr>
+				<th>Address 1</th>
+				<td>{{ employees[currentEmployee-1].address1 }}</td>
+			</tr>
+			<tr>
+				<th>Address 2</th>
+				<td>{{ employees[currentEmployee-1].address2 }}</td>
+			</tr>
+			<tr>
+				<th>Postcode</th>
+				<td>{{ employees[currentEmployee-1].postcode }}</td>
+			</tr>
+			<tr>
+				<th>Tax code</th>
+				<td>{{ employees[currentEmployee-1].taxcode }}</td>
+			</tr>
+		</tbody>
+	</table>
+	<button class="btn btn-success" ui-sref="editemployeedetails({id: currentEmployee})">Edit</button>
+	<button class="btn btn-danger">Delete</button>
+	
+</div>

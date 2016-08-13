@@ -1,0 +1,45 @@
+<!-- partials/editemployeedetails.html -->
+<div ng-controller="employeeCtrl" class="row">
+	<h3>Employee record for: {{ employees[currentEmployee-1].forename }} {{ employees[currentEmployee-1].surname }}</h3>
+
+	<form class="css-form" ng-submit="saveEditEmployee(employees[currentEmployee-1].id)">
+		<table class="table">
+		<thead class="thead-inverse">
+			<tr>
+				<th>Field</th>
+				<th>Value</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>Forename</th>
+				<td><input name="forename" value="employees[currentEmployee-1].forename" required ng-model="fields.forename"></td>
+			</tr>
+			<tr>
+				<th>Surname</th>
+				<td><input name="surname" value="{{ employees[currentEmployee-1].surname }}" required ng-model="fields.surname"></td>
+			</tr>
+			<tr>
+				<th>Address 1</th>
+				<td><input name="address1" value="{{ employees[currentEmployee-1].address1 }}" ng-model="fields.address1"></td>
+			</tr>
+			<tr>
+				<th>Address 2</th>
+				<td><input name="address2" value="{{ employees[currentEmployee-1].address2 }}" ng-model="fields.address2"></td>
+			</tr>
+			<tr>
+				<th>Postcode</th>
+				<td><input name="postcode" value="{{ employees[currentEmployee-1].postcode }}" ng-model="fields.postcode"></td>
+			</tr>
+			<tr>
+				<th>Tax code</th>
+				<td><input name="taxcode" value="{{ employees[currentEmployee-1].taxcode }}" required ng-model="fields.taxcode"></td>
+			</tr>
+		</tbody>
+		</table>
+		<input type="hidden" name="id" value="{{ employees[currentEmployee-1] }}">
+		<button class="btn btn-success" type="submit" id="submit">Save</button>
+		<button class="btn btn-danger" ui-sref="employeedetails({id: currentEmployee})">Cancel</button>
+	</form>
+	
+</div>
