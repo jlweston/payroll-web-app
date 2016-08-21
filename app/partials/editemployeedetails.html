@@ -1,5 +1,5 @@
 <!-- partials/editemployeedetails.html -->
-<div ng-controller="employeeCtrl" class="row">
+<div ng-controller="EmployeeController" class="row">
 	<h3>Employee record for: {{ employees[currentEmployee-1].forename }} {{ employees[currentEmployee-1].surname }}</h3>
 
 	<form class="css-form" ng-submit="saveEditEmployee(employees[currentEmployee-1].id)">

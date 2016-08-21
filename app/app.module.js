@@ -1,4 +1,4 @@
-var app = angular.module("payrollApp", ['ui.router']);
+var app = angular.module('payroll', ['ui.router']);
 
 app.config(function($stateProvider, $urlRouterProvider){
       

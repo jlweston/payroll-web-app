@@ -1,4 +1,5 @@
 app.controller("employeeCtrl", function($scope, $http) {
+	
     $http.get('http://localhost/employee/').
         success(function(data, status, headers, config) {
             $scope.employees = data;
@@ -20,4 +21,5 @@ app.controller("employeeCtrl", function($scope, $http) {
 		var url = 'http://localhost/employee/' + id;
 		$http.post(url, data);
 	}
+	
 });
