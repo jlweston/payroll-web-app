@@ -1,5 +1,5 @@
 app.controller("employeeCtrl", function($scope, $http) {
-    $http.get('http://localhost/employee/').
+    $http.get('http://jlweston.redirectme.net/employee/').
         success(function(data, status, headers, config) {
             $scope.employees = data;
         }).
@@ -7,7 +7,7 @@ app.controller("employeeCtrl", function($scope, $http) {
             // log error
         });
 	
-    $http.get('http://localhost/paymenthistory/').
+    $http.get('http://jlweston.redirectme.net/paymenthistory/').
         success(function(data, status, headers, config) {
             $scope.paymenthistory = data;
         }).
@@ -17,7 +17,7 @@ app.controller("employeeCtrl", function($scope, $http) {
 	
 	$scope.saveEditEmployee = function(id) {
 		var data = $scope.fields;
-		var url = 'http://localhost/employee/' + id;
+		var url = 'http://jlweston.redirectme.net/employee/' + id;
 		$http.post(url, data);
 	}
 });
